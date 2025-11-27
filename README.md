@@ -4,3 +4,5 @@
 
 ## The UI currently use razor plus a mix of vanilla and css in progress
 ## It uses mssql as a the data store.
+
+# The service layer is to manage business ocaestration logic
