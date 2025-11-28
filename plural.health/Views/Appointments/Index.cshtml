@@ -153,6 +153,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                
                             </form>
                         </div>
                     </div>
@@ -398,16 +400,15 @@
 
     <!-- TABLE -->
     <div class="table-responsive shadow-sm m-0 p-0">
-
         <div class="container-fluid mt-3">
             <div class="container-fluid">
                 <div class="row table-light px-4">
-                    <div class="col-2 text-muted p-2">
+                    <div class="col-1 text-muted p-2" style="width:60px">
                         <div class="col-sm-2 text-muted p-2">
                             #
                         </div>
                     </div>
-                    <div class="col-2 bg- text-muted p-2 fw-semibold">
+                    <div class="col-3 bg- text-muted p-2 fw-semibold">
                         Patient Information
                     </div>
                     <div class="col-2 bg- text-muted p-2 fw-semibold">
@@ -422,14 +423,14 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2H13.5C14.3284 2 15 2.67157 15 3.5V13.5C15 14.3284 14.3284 15 13.5 15H1.5C0.671573 15 0 14.3284 0 13.5V3.5C0 2.67157 0.671573 2 1.5 2H3V0H4V2H11V0H12V2ZM6 8H3V7H6V8ZM12 7H9V8H12V7ZM6 11H3V10H6V11ZM9 11H12V10H9V11Z" fill="#0B0C7D" />
                         </svg>
                     </div>
-                    <div class="col-2 bg- text-muted p-2 fw-semibold">
+                    <div class="col-2 bg- text-muted p-2 fw-semibold  px-4" style="">
                         Status
                     </div>
                 </div>
                 @foreach (var item in Model)
                 {
-                    <div class="row my-2 bg-light" style="border-left: solid 4px #FF9D33; border-radius: 8px;padding-left:20px;">
-                        <div class="col-sm-2 bg- text-muted p-1">
+                    <div class="row my-2 bg-light  py-2" style="border-left: solid 4px #FF9D33; border-radius: 8px;padding-left:20px;">
+                        <div class="col-sm-1 bg- text-muted p-1" style="width:60px">
                             <div class="row">
                                 <div class="col-1">
                                     <div class="col">
@@ -444,45 +445,46 @@
                                     </div>
                                 </div>
                                 <div class="col-1">
-                                    <div class="py-3">
+                                    <div class="py-3 text-muted">
                                         @item.Id
                                     </div>
                                 </div>
                             </div>
-
-                            
                         </div>
-                        <div class="col-2 bg- text-muted p-1">
+                        <div class="col-3 bg- text-muted p-1">
                             <div class="d-flex align-items-center gap-3">
                                 <img src="~/image/logos/user.png" class="rounded-circle patient-img" />
                                 <div>
                                     <div class="fw-bold">@item.PatientName</div>
-                                    <div class="text-muted small">
+                                    <div class="text-muted">
                                         @item.PatientCode • @item.Gender • @item.Age
                                     </div>
                                 </div>
                                 <span class="status-badge bg-secondary-subtle px-2">New</span>
                             </div>
                         </div>
-                        <div class="col-2 bg- text-muted p-1">
+                        <div class="col-2 bg- text-muted p-1 fw-bold">
                             @item.Clinic
                         </div>
-                        <div class="col-2 bg- text-muted p-3">
+                        <div class="col-2 bg- text-muted p-1 fw-bold">
                             @item.WalletBalance.ToString("N0")
                         </div>
-                        <div class="col-2 bg- text-muted p-1">
-                            <div class="fw-bold text-primary">
+                        <div class="col-2 bg- text-muted p-1" style="">
+                            <div class="fw-bold text-primary fw-bold">
                                 @item.AppointmentTime.ToString("hh:mm tt")
                             </div>
-                            <div class="text-muted small">
+                            <div class="text-muted fw-bold">
                                 @item.AppointmentTime.ToString("dd MMM yyyy")
                             </div>
                         </div>
                         <div class="col-2 bg- text-muted p-1">
-                            <div class=" dropdown p-0 m-0" style="">
-                                <span class="badge bg-@item.StatusColor m-0">@item.Status</span>
+                            <div class="dropdown py-2" style="">
+                                <span class="badge bg-@item.StatusColor">@item.Status</span>
                                 <span class="dropdown non-edit-hover" data-bs-toggle="dropdown">
-                                    ...
+                                    <svg width="3" height="13" viewBox="0 0 3 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.76837e-07 1.06667C4.76837e-07 0.477563 0.477564 0 1.06667 0C1.65577 3.17891e-08 2.13333 0.477563 2.13333 1.06667C2.13333 1.65577 1.65577 2.13333 1.06667 2.13333C0.477563 2.13333 4.45048e-07 1.65577 4.76837e-07 1.06667ZM2.22524e-07 6.4C2.54313e-07 5.8109 0.477563 5.33333 1.06667 5.33333C1.65577 5.33333 2.13333 5.8109 2.13333 6.4C2.13333 6.9891 1.65577 7.46667 1.06667 7.46667C0.477563 7.46667 2.22524e-07 6.9891 2.22524e-07 6.4ZM0 11.7333C3.17891e-08 11.1442 0.477563 10.6667 1.06667 10.6667C1.65577 10.6667 2.13333 11.1442 2.13333 11.7333C2.13333 12.3224 1.65577 12.8 1.06667 12.8C0.477563 12.8 0 12.3224 0 11.7333Z" fill="#051438" />
+                                    </svg>
+
                                 </span>
                                 <ul class="dropdown-menu" style="">
                                     <li><a class="dropdown-item" href="#">Create Appointment</a></li>
